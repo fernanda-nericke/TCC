@@ -1,3 +1,50 @@
+
+<?php
+
+if (isset($_POST['submit'])) { 
+
+    include_once('config.php');
+
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : ''; 
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
+    $sexo = isset($_POST['genero']) ? $_POST['genero'] : '';
+    $data_nasc = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
+    $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : '';
+    $estado = isset($_POST['estado']) ? $_POST['estado'] : '';
+    $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
+
+    
+    
+   
+
+    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,sexo,data_nasc,cidade,estado,endereco) VALUES ('$nome','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$endereco')");
+}
+
+
+// if(isset($_POST['submit']))
+// {
+//     // print_r($_POST['nome']);
+//     // print_r('<br>');
+//     // print_r($_POST['email']);
+//     // print_r('<br>');
+//     // print_r($_POST['telefone']);
+
+//     
+
+//     $nome = $POST['nome'];
+//     $email = $POST['email'];
+//     $telefone = $POST['telefone'];
+//     $sexo = $POST['feminino'];
+//     //$data_nasc = $POST['data_nasc'];
+//     $cidade = $POST['cidade'];
+//     $estado = $POST['estado'];
+//     $endereco = $POST['endereco'];
+
+   
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -79,8 +126,9 @@
     </style>
 </head>
 <body>
+    <a href="home.php">Voltar</a>
     <div class="box">
-        <form action="">
+        <form action="formulario.php" method="POST">
             <fieldset>
                 <legend><strong>Formulário de Clientes</strong></legend>
                 <br>

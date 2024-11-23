@@ -38,6 +38,7 @@
     }
 </style>
 <body>
+    <a href="home.php">Voltar</a>
     <div class="login">
         <h1>Login</h1>
         <input type="text" placeholder="Nome">
