@@ -1,25 +1,64 @@
 
 <?php
 
-if (isset($_POST['submit'])) { 
-
-    include_once('config.php');
+if (isset($_POST['submit']))
+{
+    include_once('config-cliente.php');
 
     $nome = isset($_POST['nome']) ? $_POST['nome'] : ''; 
-    $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+    // $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
     $sexo = isset($_POST['genero']) ? $_POST['genero'] : '';
-    $data_nasc = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
+    $data_nascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
     $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : '';
     $estado = isset($_POST['estado']) ? $_POST['estado'] : '';
     $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
 
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,sexo,data_nasc,cidade,estado,endereco) 
-    VALUES ('$nome','$senha','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$endereco')");
+    $result_cliente = mysqli_query($conexao_cliente, "INSERT INTO clientes(nome,email,telefone,sexo,data_nascimento,cidade,estado,endereco) VALUES ('$nome','$email','$telefone','$sexo','$data_nascimento','$cidade','$estado','$endereco')");
 
-    header('Location: login.php');
+    header('Location: sistema.php');
+
+    // echo $telefone;
+    // print_r('<br>');
+    // echo $nome;
+    // print_r('<br>');
+    // echo $senha;
+    // print_r('<br>');
+    // echo $email;
+    // print_r('<br>');
+    // echo $sexo;
+    // print_r('<br>');
+    // echo $data_nascimento;
+    // print_r('<br>');
+    // echo $cidade;
+    // print_r('<br>');
+    // echo $estado;
+    // print_r('<br>');
+    // echo $endereco;
+
+
 }
+
+
+// if (isset($_POST['submit'])) { 
+
+//     include_once('config-cliente.php');
+
+//     $nome = isset($_POST['nome']) ? $_POST['nome'] : ''; 
+//     $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+//     $email = isset($_POST['email']) ? $_POST['email'] : '';
+//     $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
+//     $sexo = isset($_POST['genero']) ? $_POST['genero'] : '';
+//     $data_nascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
+//     $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : '';
+//     $estado = isset($_POST['estado']) ? $_POST['estado'] : '';
+//     $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
+
+//     $result = mysqli_query($conexao, "INSERT INTO clientes(nome,senha,email,telefone,sexo,data_nascimento,cidade,estado,endereco) VALUES ('$nome','$senha','$email','$telefone','$sexo','$data_nascimento','$cidade','$estado','$endereco')");
+
+//     header('Location: login.php');
+// }
  
 ?>
 <!DOCTYPE html>
@@ -27,7 +66,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário | Funcionários</title>
+    <title>Formulário | Clientes</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -76,7 +115,7 @@ if (isset($_POST['submit'])) {
         .inputUser:valid ~ .labelInput{
             top: -20px;
             font-size: 12px;
-            color: #e2ddd9;
+            color: #f8f1e9;
         }
         label, p{
             color: #f8f1e9;
@@ -88,7 +127,7 @@ if (isset($_POST['submit'])) {
             outline: none;
         }
         #submit{
-            background: #e2ddd9;
+            background: #f8f1e9;
             width: 100%;
             border: none;
             padding: 15px;
@@ -101,19 +140,19 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div class="box">
-        <form action="formulario.php" method="POST">
+        <form action="form-cliente.php" method="POST">
             <fieldset>
-                <legend><strong>Formulário de Funcionários</strong></legend>
+                <legend><strong>Formulário de Clientes</strong></legend>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
                 </div>
                 <br><br>
-                <div class="inputBox">
+                <!-- <div class="inputBox">
                     <input type="password" name="senha" id="senha" class="inputUser" required>
                     <label for="senha" class="labelInput">Senha</label>
-                </div>
+                </div> -->
                 <br><br>
                 <div class="inputBox">
                     <input type="text" name="email" id="email" class="inputUser" required>

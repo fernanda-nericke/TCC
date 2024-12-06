@@ -1,9 +1,9 @@
 <?php
 
-    $dbHost = 'localhost';
+    $dbHost = 'Localhost';
     $dbUsername = 'root';
     $dbPassword = '';
-    $dbName = 'formulario-tcc';
+    $dbName = 'test';
 
     $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 ?>

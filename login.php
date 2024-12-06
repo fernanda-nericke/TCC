@@ -9,10 +9,10 @@
 <style>
     body{
         font-family: Arial, Helvetica, sans-serif;
-        background-image: linear-gradient(45deg, pink, rgb(129, 129, 245)) ;
+        background: #e2ddd9;
     }
     .login{
-        background-color: #f1f3a5;
+        background-color: #848484;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -25,27 +25,40 @@
         border: none;
         outline: none;
         border-radius: 5px;
+        color: #2c171c;
     }
-    .button{
-        background-color: pink;
+    .inputSubmit{
+        background-color: #f8f1e9;
         border: none;
         padding: 15px;
         width: 100%;
         border-radius: 5px;
     }
-    .button:hover{
-        background-color: lightpink;
+    h1{
+        color: #f8f1e9;
+    }
+    a{
+        text-decoration: none;
+        color: #f8f1e9;
+        font-size: 14px;
+    }
+    .sublinhado{
+        text-decoration: underline;
     }
 </style>
 <body>
     <a href="home.php">Voltar</a>
     <div class="login">
         <h1>Login</h1>
-        <input type="text" placeholder="Nome">
-        <br><br>
-        <input type="password" placeholder="Senha">
-        <br><br>
-        <button class="button">Enviar</button>
+        <form action="testLogin.php" method="POST">
+            <input type="text" name="email" placeholder="E-mail">
+            <br><br>
+            <input type="password" name="senha" placeholder="Senha">
+            <br><br>
+            <input class="inputSubmit" type="submit" name="submit" value="Enviar">
+        </form>
+        <br>
+        <a href="formulario.php">Não tem conta? <span class="sublinhado">Cadastre-se</span></a>
     </div>
 </body>
 
