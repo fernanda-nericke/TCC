@@ -1,4 +1,3 @@
-
 <?php
 
 if (isset($_POST['submit'])) { 
@@ -27,41 +26,40 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário | Funcionários</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title> Formulário | Funcionários</title>
     <style>
         body{
-            font-family: Arial, Helvetica, sans-serif;
-            background: #e2ddd9;
-        }
-        .box{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #848484;
-            padding: 15px;
-            border-radius: 15px;
-            /*width: 20%;*/
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;   
+            min-height: 100vh;     
+            background-color: #f4f4f4; 
         }
         fieldset{
-            border: 3px solid #f8f1e9;
+            border: 3px solid #f4f4f4;
         }
         legend{
             padding: 10px;
             text-align: center;
-            color: #f8f1e9;
+            color: #f4f4f4;
             font-size: 20px;
         }
         .inputBox{
             position: relative;
+            font-size: 18px;
         }
         .inputUser{
             background: none;
             border: none;
-            border-bottom: 1px solid #f8f1e9;
+            border-bottom: 1px solid #f4f4f4;
             outline: none;
-            color: #f8f1e9;
-            font-size: 14px;
+            color: #f4f4f4;
+            font-size: 18px;
             width: 95%;
             letter-spacing: 1px;
         }
@@ -76,10 +74,10 @@ if (isset($_POST['submit'])) {
         .inputUser:valid ~ .labelInput{
             top: -20px;
             font-size: 12px;
-            color: #e2ddd9;
+            color: #f4f4f4;
         }
         label, p{
-            color: #f8f1e9;
+            color: #f4f4f4;
         }
         #dataNascimento{
             border: none;
@@ -88,22 +86,30 @@ if (isset($_POST['submit'])) {
             outline: none;
         }
         #submit{
-            background: #e2ddd9;
+            background: #f4f4f4;
             width: 100%;
             border: none;
             padding: 15px;
             border-radius: 10px;
-            color: #848484;
+            color: #f7aac8;
             font-size: 18px;
             cursor: pointer;
+        }
+        .container {
+            background-color: #f7aac8;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%; 
+            max-width: 800px; 
         }
     </style>
 </head>
 <body>
-    <div class="box">
+    <div class="container">
         <form action="formulario.php" method="POST">
             <fieldset>
-                <legend><strong>Formulário de Funcionários</strong></legend>
+                <legend><strong>FORMULÁRIO DE FUNCIONÁRIOS</strong></legend>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
@@ -125,20 +131,22 @@ if (isset($_POST['submit'])) {
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
                 <br><br>
-                <p>Sexo:</p>
-                <input type="radio" name="genero" id="feminino" value="feminino" required>
-                <label for="feminino">Feminino</label>
-                <br>
-                <input type="radio" name="genero" id="masculino" value="masculino" required>
-                <label for="masculino">Masculino</label>
-                <br>
-                <input type="radio" name="genero" id="outro" value="outro" required>
-                <label for="outro">Outro</label>
+                <div class="inputBox">
+                    <p>Sexo:</p>
+                    <input type="radio" name="genero" id="feminino" value="feminino" required>
+                    <label for="feminino">Feminino</label>
+                    <br>
+                    <input type="radio" name="genero" id="masculino" value="masculino" required>
+                    <label for="masculino">Masculino</label>
+                    <br>
+                    <input type="radio" name="genero" id="outro" value="outro" required>
+                    <label for="outro">Outro</label>
+                </div>
                 <br><br>
-                <br><br>
-                <label for="dataNascimento">Data de Nascimento:</label>
-                <input type="date" name="dataNascimento" id="dataNascimento" class="" required>
-                <br><br>
+                <div class="inputBox">
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" name="dataNascimento" id="dataNascimento" class="" required>
+                </div>
                 <br><br>
                 <div class="inputBox">
                     <input type="text" name="cidade" id="cidade" class="inputUser" required>
